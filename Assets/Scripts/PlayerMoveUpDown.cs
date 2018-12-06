@@ -13,15 +13,12 @@ public class PlayerMoveUpDown : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-
-  
     }
  
 
@@ -31,7 +28,7 @@ public class PlayerMoveUpDown : MonoBehaviour
         rigid.velocity = velocity;
     }
 
-    public void jump()
+    public void Jump()
     {
         if (Input.GetKey(KeyCode.Space))
         {
