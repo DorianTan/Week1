@@ -9,6 +9,7 @@ public class PlayerMoveUpDown : MonoBehaviour
     private float speed;
     private Rigidbody2D rigid;
 
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -18,7 +19,9 @@ public class PlayerMoveUpDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();  
+        Move();
+
+  
     }
  
 
