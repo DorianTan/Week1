@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/CameraScript.cs.meta
+guid: 9f7bbcf2fbffdc045943fb9669f9208d
+=======
+guid: 9499b8c93c4ccc14bbade5595f5ffdb4
+>>>>>>> Ethan:Assets/Scripts/PlayerScript/PlayerMovementSide.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
