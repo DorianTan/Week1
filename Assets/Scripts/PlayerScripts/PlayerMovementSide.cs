@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Experimental.PlayerLoop;
 
 public class PlayerMovementSide : MonoBehaviour
 {
@@ -9,14 +10,16 @@ public class PlayerMovementSide : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private bool isJumping = false;
     private float horizontalInput;
-
+    private SpriteRenderer playerSprite;
+    private Animator playerAnimator;
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float move = Input.GetAxis("Horizontal");
 
@@ -26,15 +29,24 @@ public class PlayerMovementSide : MonoBehaviour
         {
             _rigidbody2D.AddForce(Vector2.up * playerJumpforce, ForceMode2D.Impulse);
             isJumping = true;
-            Debug.Log(isJumping);
+        }
+
+        if (_rigidbody2D.velocity != Vector2.zero)
+        {
+            playerAnimator.SetBool("isWalking", true);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.name == "Ground")
         {
             isJumping = false;
+        }
+
+        if (collision.gameObject.name == "Spike")
+        {
+            Destroy(gameObject);
         }
     }
 }
