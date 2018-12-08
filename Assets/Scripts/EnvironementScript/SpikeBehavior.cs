@@ -15,14 +15,13 @@ public class SpikeBehavior : MonoBehaviour
     void Update()
     {
         spikeBody.velocity = new Vector2(spikeSpeed, 0);
-        
     }
 
     private void OnCollisionEnter2D(Collision2D spikeColision)
     {
         if (spikeColision.gameObject.name == "Player")
         {
-            Destroy(spikeColision.gameObject);
+            GameManager.lives -= 1;
         }
 
         if (spikeColision.gameObject.name == "Enemy")

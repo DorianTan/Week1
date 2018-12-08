@@ -51,5 +51,11 @@ public class EnemyPattern : MonoBehaviour
 
                 break;
         }
+        
+    }
+
+    public void OnTriggerEnter2D(Collider2D Player)
+    {
+        GameManager.lives -= 1;
     }
 }
