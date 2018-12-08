@@ -60,78 +60,9 @@ public class Enemies : MonoBehaviour
         rig.velocity = new Vector2(0, -speed);
     }
 
-
-
-
-
-
-    /*
-        [SerializeField] private Transform[] waypoints;
-
-        [SerializeField] private float moveSpeed = 2f;
-
-        private int waypointIndex = 0;
-
-        void Start()
-        {
-            transform.position = waypoints[waypointIndex].transform.position;
-        }
-
-        void Update()
-        {
-            Move();
-        }
-
-        void Move()
-        {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position,
-                moveSpeed * Time.deltaTime);
-
-            if (transform.position == waypoints[waypointIndex].transform.position)
-            {
-                waypointIndex += 1;
-            }
-
-            if (waypointIndex == waypoints.Length)
-            {
-                waypointIndex = 0;
-            }
-        }*/
-    /*
-        private Transform target;
-        private int wavepointIndex = 0;
-        public float speed = 10f;
-
-
-
-        // Use this for initialization
-        void Start ()
-        {
-            target = WayPoint.wayPoints[0];
-        }
-
-        // Update is called once per frame
-        void Update ()
-        {
-            Vector3 direction = target.position - transform.position;
-            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-
-            if (Vector2.Distance(transform.position, target.position) <= 0.1f) //la distance des waypoints pour envoyer l'ennemie au prochain waypoints
-            {
-                GoNextWayPoint();
-            }
-        }
-
-        void GoNextWayPoint()
-        {
-            if (wavepointIndex >= WayPoint.wayPoints.Length - 1) //si il arrive au dernier, il se détruit
-            {
-                wavepointIndex = 0;
-                return;
-            }
-            wavepointIndex++;
-            transform.position = target.position;               //remet l'ennemie sur waypoint pour pas qu'il parte en diagonale
-            target = WayPoint.wayPoints[wavepointIndex];
-        }*/
+    public void OnTriggerEnter2D(Collider2D Player)
+    {
+        GameManager.lives -= 1;
+    }
 
 }
