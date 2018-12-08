@@ -7,8 +7,11 @@ public class Enemies : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] private float speed;
-    [SerializeField] private float posMax = 3.5f;
-    [SerializeField] private float posMin = -1f;
+    [SerializeField] private float posMax;
+    [SerializeField] private float posMin;
+    public float health;
+    
+
 
     private bool call1=true;
     enum Enemy
@@ -22,6 +25,11 @@ public class Enemies : MonoBehaviour
     void Start()
     {
         enemy = Enemy.GO_UP;
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
     }
 
 

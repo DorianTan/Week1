@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61295168834116188}
   - component: {fileID: 114543432207158834}
   - component: {fileID: 95303086803062342}
+  - component: {fileID: 114648219667944596}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 400
   animator: {fileID: 95303086803062342}
+--- !u!114 &114648219667944596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799632538997876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4a3837b770bab4f8c8e5445b0a7e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  SwordPrefab: {fileID: 0}
+  damages: 10
 --- !u!212 &212920391238528330
 SpriteRenderer:
   m_ObjectHideFlags: 1

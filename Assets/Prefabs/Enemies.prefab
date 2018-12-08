@@ -103,6 +103,7 @@ MonoBehaviour:
   speed: 2
   posMax: 3.5
   posMin: -1
+  health: 20
 --- !u!212 &212345470766173848
 SpriteRenderer:
   m_ObjectHideFlags: 1
