@@ -50,7 +50,7 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
         }
@@ -63,11 +63,11 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D swordCollider)
     {
-        //TODO sword animationq
+        //TODO sword animation
 
         if (swordCollider.name == "Enemy")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
