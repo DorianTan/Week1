@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void BtnStart()
     {
-        SceneManager.LoadScene("Scenes/LvlUpDown");
+        SceneManager.LoadScene("Scenes/lvlSide");
         Time.timeScale = 1f;
     }
 

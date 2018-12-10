@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor.Experimental.UIElements;
 using UnityEngine.Experimental.PlayerLoop;
 
 public class PlayerMovementSide : MonoBehaviour
@@ -7,12 +8,16 @@ public class PlayerMovementSide : MonoBehaviour
     [SerializeField] private float playerSpeed;
     [SerializeField] private float playerJumpforce;
 
+
+    private float move = 0f;
     private Rigidbody2D _rigidbody2D;
     private bool isJumping = false;
     private float horizontalInput;
     private SpriteRenderer playerSprite;
     private Animator playerAnimator;
     private Collider2D swordCollider;
+
+    public Animator animator;
 
     void Start()
     {
@@ -23,9 +28,10 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float move = Input.GetAxis("Horizontal");
+        move = Input.GetAxis("Horizontal")*playerSpeed;
 
-        _rigidbody2D.velocity = new Vector2(move * playerSpeed, _rigidbody2D.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(move));
+
 
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
@@ -50,7 +56,7 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Ground")
+        if (this.tag == "Ground")
         {
             isJumping = false;
         }

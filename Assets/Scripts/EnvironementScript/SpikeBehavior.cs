@@ -21,7 +21,7 @@ public class SpikeBehavior : MonoBehaviour
     {
         if (spikeColision.gameObject.name == "Player")
         {
-            GameManager.lives -= 1;
+            Destroy(spikeColision.gameObject);
         }
 
         if (spikeColision.gameObject.name == "Enemy")
