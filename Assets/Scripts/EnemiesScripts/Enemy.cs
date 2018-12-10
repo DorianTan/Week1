@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter2D(Collider2D Player)
+    public void OnTriggerEnter2D(Collider2D col)
     {
         GameManager.lives -= 1;
     }

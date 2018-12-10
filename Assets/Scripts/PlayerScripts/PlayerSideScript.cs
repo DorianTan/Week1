@@ -39,15 +39,6 @@ public class PlayerMovementSide : MonoBehaviour
             _rigidbody2D.AddForce(Vector2.up * playerJumpforce, ForceMode2D.Impulse);
             isJumping = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Attack();
-        }
-        else
-        {
-            NoAttack();
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,22 +56,10 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D swordCollider)
     {
-        //TODO sword animationq
-
+        
         if (swordCollider.name == "Enemy")
         {
             Destroy(this.gameObject);
         }
-    }
-
-    void Attack()
-    {
-        swordCollider.enabled = true;
-    }
-
-    void NoAttack()
-    {
-        swordCollider.enabled = false;
-        //TODO implement sword animation
     }
 }
