@@ -58,15 +58,4 @@ public class EnemyPattern : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D Player)
-    {
-        GameManager.lives -= 1;
-
-        if (Player.name == "Sword")
-        {
-            Destroy(gameObject);
-
-
-        }
-    }
 }

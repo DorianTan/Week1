@@ -7,11 +7,14 @@ public class PlayerSideScript : MonoBehaviour
     [SerializeField] private float playerSpeed;
     [SerializeField] private float playerJumpforce;
 
+    
+
     private Rigidbody2D _rigidbody2D;
     private bool isJumping = false;
-    private float horizontalInput;
+    private float horizontalMove;
     private SpriteRenderer playerSprite;
-    private Animator playerAnimator;
+    public Animator playerAnimator;
+    private float move = 0f;
 
     void Start()
     {
@@ -21,9 +24,13 @@ public class PlayerSideScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float move = Input.GetAxis("Horizontal");
-
+        move = Input.GetAxis("Horizontal");
         _rigidbody2D.velocity = new Vector2(move * playerSpeed, _rigidbody2D.velocity.y);
+        playerAnimator.SetFloat("Move_Right", move);
+        playerAnimator.SetFloat("Move_Left", move);
+
+
+
 
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
@@ -31,10 +38,6 @@ public class PlayerSideScript : MonoBehaviour
             isJumping = true;
         }
 
-        if (_rigidbody2D.velocity != Vector2.zero)
-        {
-            playerAnimator.SetBool("isWalking", true);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
