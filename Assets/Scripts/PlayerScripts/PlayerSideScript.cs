@@ -32,6 +32,7 @@ public class PlayerMovementSide : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(move));
 
+        //_rigidbody2D.velocity = new Vector2(move * playerSpeed, _rigidbody2D.velocity.y);
 
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
@@ -46,11 +47,6 @@ public class PlayerMovementSide : MonoBehaviour
         else
         {
             NoAttack();
-        }
-
-        if (_rigidbody2D.velocity != Vector2.zero)
-        {
-            playerAnimator.SetBool("isWalking", true);
         }
     }
 

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OldGuy.unity
     guid: 37f283e4edd56d748ac6b04b1318ff9b
+  - enabled: 1
+    path: Assets/Scenes/LvlSideGrab.unity
+    guid: 7bc1d97735444d54ebbb190058144598
   m_configObjects: {}
