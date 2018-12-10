@@ -30,20 +30,25 @@ public class EnemyPattern : MonoBehaviour
                 // Moving Left
                 if (transform.position.x > minDist)
                 {
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(-enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
+                    GetComponent<Rigidbody2D>().velocity =
+                        new Vector2(-enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
                 }
+
                 else
                 {
                     direction = 1;
                 }
 
                 break;
+
             case 1:
                 //Moving Right
                 if (transform.position.x < maxDist)
                 {
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
+                    GetComponent<Rigidbody2D>().velocity =
+                        new Vector2(enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
                 }
+
                 else
                 {
                     direction = -1;
@@ -51,11 +56,17 @@ public class EnemyPattern : MonoBehaviour
 
                 break;
         }
-        
     }
 
     public void OnTriggerEnter2D(Collider2D Player)
     {
         GameManager.lives -= 1;
+
+        if (Player.name == "Sword")
+        {
+            Destroy(gameObject);
+
+
+        }
     }
 }
