@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour {
 
-    private Transform target;
-    public int damages;
-
-    void OnTriggerEnter2D(Collider2D target)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        target.GetComponent<Enemies>().TakeDamage(damages);
+        Debug.Log("fdjk");
+
+
+        if (col.gameObject.name == "Enemies")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }

@@ -6,8 +6,8 @@ public class EnemyPattern : MonoBehaviour
 {
     [SerializeField] private float enemySpeed;
 
-    float minDist = 30.0f;
-    float maxDist = 30.0f;
+    public float minDist = 30.0f;
+    public float maxDist = 30.0f;
     private Vector2 initialPosition;
     int direction = -1;
 

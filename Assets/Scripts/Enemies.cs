@@ -11,19 +11,17 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float posMin;
     public float health;
 
-    private bool call1=true;
-
     enum Enemy
     {
-        GO_UP,
-        GO_DOWN,
-        DIE,
+        GO_LEFT,
+        GO_RIGHT,
+        //DIE,
     }
     private Enemy enemy;
 
     void Start()
     {
-        enemy = Enemy.GO_UP;
+        enemy = Enemy.GO_LEFT;
     }
 
     public void TakeDamage(float amount)
@@ -35,35 +33,35 @@ public class Enemies : MonoBehaviour
     {
         switch (enemy)
         {
-            case Enemy.GO_UP:
-                GoUp();
+            case Enemy.GO_LEFT:
+                GoLeft();
                 break;
-            case Enemy.GO_DOWN:
-                GoDown();
+            case Enemy.GO_RIGHT:
+                GoRight();
                 break;
-            case Enemy.DIE:
+            //case Enemy.DIE:
 
-                break;
+            //    break;
         }
     }
 
-    public void GoUp()
+    public void GoLeft()
     {       
-        if (gameObject.transform.position.y>=posMax)
+        if (gameObject.transform.position.x>=posMax)
         {
-            enemy = Enemy.GO_DOWN;
+            enemy = Enemy.GO_RIGHT;
         }
-            rig.velocity=new Vector2(0,speed);
+            rig.velocity=new Vector2(speed,0);
 
     }
 
-    public void GoDown()
+    public void GoRight()
     {
-        if (gameObject.transform.position.y <= posMin)
+        if (gameObject.transform.position.x <= posMin)
         {
-            enemy = Enemy.GO_UP;
+            enemy = Enemy.GO_LEFT;
         }
-        rig.velocity = new Vector2(0, -speed);
+        rig.velocity = new Vector2(-speed,0);
     }
 
     public void OnTriggerEnter2D(Collider2D Player)
