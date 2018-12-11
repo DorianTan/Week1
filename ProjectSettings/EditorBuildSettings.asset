@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LvlSideGrab.unity
     guid: 7bc1d97735444d54ebbb190058144598
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: d7e658d432d445d4980a340542d02c9c
   m_configObjects: {}

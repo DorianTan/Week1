@@ -9,7 +9,7 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float posMax;
     [SerializeField] private float posMin;
-    public static int health=20;
+    [SerializeField] private int health=20;
 
     enum Enemy
     {
@@ -35,9 +35,10 @@ public class Enemies : MonoBehaviour
                 GoRight();
                 break;
         }
+
         if (health<=0)
         {
-            Destroy(gameObject);   
+            Destroy(gameObject);
         }
     }
 
@@ -64,8 +65,13 @@ public class Enemies : MonoBehaviour
     {
         if (player.gameObject.name == "Player")
         {
-            Debug.Log("sa touche");
             GameManager.lives -= 1;
         }   
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
 }
