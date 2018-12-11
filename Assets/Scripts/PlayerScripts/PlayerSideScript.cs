@@ -16,7 +16,6 @@ public class PlayerMovementSide : MonoBehaviour
     private SpriteRenderer playerSprite;
     private Animator playerAnimator;
     private Collider2D swordCollider;
-
     public Animator animator;
 
     void Start()
@@ -28,7 +27,7 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void FixedUpdate()
     {
-        move = Input.GetAxis("Horizontal")*playerSpeed;
+        move = Input.GetAxis("Horizontal") * playerSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(move));
 
@@ -52,19 +51,20 @@ public class PlayerMovementSide : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D swordCollider)
     {
-<<<<<<< HEAD
         //TODO sword animation
 
-=======
-        
->>>>>>> DorianTan
+
         if (swordCollider.name == "Enemy")
         {
             Destroy(gameObject);
         }
     }
+
+
 }

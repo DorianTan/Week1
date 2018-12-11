@@ -15,7 +15,7 @@ public class PlayerSideScript : MonoBehaviour
     private SpriteRenderer playerSprite;
     public Animator playerAnimator;
     private float move = 0f;
-
+    private bool facingRight;
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -27,9 +27,18 @@ public class PlayerSideScript : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         _rigidbody2D.velocity = new Vector2(move * playerSpeed, _rigidbody2D.velocity.y);
         playerAnimator.SetFloat("Move_Right", move);
-        playerAnimator.SetFloat("Move_Left", move);
+        //playerAnimator.SetFloat("Move_Left", move);
 
-
+        if (move < 0)
+        {
+            facingRight = false;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            facingRight = true;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
 
 
         if (Input.GetButtonDown("Jump") && !isJumping)
