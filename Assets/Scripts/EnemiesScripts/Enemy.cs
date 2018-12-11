@@ -25,9 +25,9 @@ public class Enemy : MonoBehaviour
         health -= damage;
     }
 
-
     public void OnTriggerEnter2D(Collider2D col)
     {
+        
         GameManager.lives -= 1;
     }
 }

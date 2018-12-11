@@ -9,7 +9,7 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float posMax;
     [SerializeField] private float posMin;
-    public float health;
+    public static int health=20;
 
     enum Enemy
     {
@@ -24,11 +24,6 @@ public class Enemies : MonoBehaviour
         enemy = Enemy.GO_LEFT;
     }
 
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-    }
-
     void Update()
     {
         switch (enemy)
@@ -39,9 +34,10 @@ public class Enemies : MonoBehaviour
             case Enemy.GO_RIGHT:
                 GoRight();
                 break;
-            //case Enemy.DIE:
-
-            //    break;
+        }
+        if (health<=0)
+        {
+            Destroy(gameObject);   
         }
     }
 
@@ -64,9 +60,12 @@ public class Enemies : MonoBehaviour
         rig.velocity = new Vector2(-speed,0);
     }
 
-    public void OnTriggerEnter2D(Collider2D Player)
+    private void OnCollisionEnter2D(Collision2D player)
     {
-        GameManager.lives -= 1;
+        if (player.gameObject.name == "Player")
+        {
+            Debug.Log("sa touche");
+            GameManager.lives -= 1;
+        }   
     }
-
 }

@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Ground
   - Spike
+<<<<<<< HEAD
   - Doorlvl1
+=======
+  - "\xCBnemy"
+>>>>>>> master
   - Enemy
   layers:
   - Default
