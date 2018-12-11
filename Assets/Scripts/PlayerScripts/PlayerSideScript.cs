@@ -11,6 +11,13 @@ public class PlayerMovementSide : MonoBehaviour
     private float move = 0f;
     private Rigidbody2D _rigidbody2D;
     private bool isJumping = false;
+    private bool keyPicked = false;
+
+    public bool KeyPicked
+    {
+        get { return keyPicked; }
+        set { keyPicked = value; }
+    }
     private float horizontalInput;
     private SpriteRenderer playerSprite;
     private Animator playerAnimator;
@@ -39,7 +46,7 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
         }
@@ -48,7 +55,14 @@ public class PlayerMovementSide : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+    }
 
-
+    private void OnTriggerEnter2D(Collider2D keyCollider)
+    {
+        if (keyCollider.gameObject.name == "Player")
+        {
+            keyPicked = true;
+        }
     }
 }
