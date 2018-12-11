@@ -24,7 +24,7 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void FixedUpdate()
     {
-        move = Input.GetAxis("Horizontal")*playerSpeed;
+        move = Input.GetAxis("Horizontal") * playerSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(move));
 
@@ -48,5 +48,7 @@ public class PlayerMovementSide : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
     }
 }
