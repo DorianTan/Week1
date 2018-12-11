@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212345470766173848}
   - component: {fileID: 114045675920533214}
   - component: {fileID: 50108641325923498}
-  - component: {fileID: 61762162754131532}
+  - component: {fileID: 61095512530574980}
   m_Layer: 9
   m_Name: Enemies
   m_TagString: Enemy
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1057549208532258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.8, y: 1.01, z: 0}
-  m_LocalScale: {x: 12, y: 6, z: 8.455669}
+  m_LocalPosition: {x: -16.221, y: -0.19, z: 0}
+  m_LocalScale: {x: 7.002, y: 7.002, z: 7.002}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61762162754131532
+--- !u!61 &61095512530574980
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
