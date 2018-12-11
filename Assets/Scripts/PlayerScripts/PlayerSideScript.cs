@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Experimental.PlayerLoop;
+using UnityEngine.SceneManagement;
 
-public class PlayerMovementSide : MonoBehaviour
+public class PlayerSideScript : MonoBehaviour
 {
     [SerializeField] private float playerSpeed;
     [SerializeField] private float playerJumpforce;
-
-
-    private float move = 0f;
+    
     private Rigidbody2D _rigidbody2D;
     private bool isJumping = false;
-    private float horizontalInput;
+    private float horizontalMove;
     private SpriteRenderer playerSprite;
-    private Animator playerAnimator;
-    public Animator animator;
+    public Animator playerAnimator;
+    private float move = 0f;
+    private bool facingRight;
 
     void Start()
     {
@@ -24,31 +24,45 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void FixedUpdate()
     {
-        move = Input.GetAxis("Horizontal") * playerSpeed;
+        move = Input.GetAxis("Horizontal");
+        _rigidbody2D.velocity = new Vector2(move * playerSpeed, _rigidbody2D.velocity.y);
+        playerAnimator.SetFloat("Move_Right", move);
+        //playerAnimator.SetFloat("Move_Left", move);
 
-        animator.SetFloat("Speed", Mathf.Abs(move));
+        if (move < 0)
+        {
+            facingRight = false;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            facingRight = true;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
 
-        //_rigidbody2D.velocity = new Vector2(move * playerSpeed, _rigidbody2D.velocity.y);
 
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             _rigidbody2D.AddForce(Vector2.up * playerJumpforce, ForceMode2D.Impulse);
             isJumping = true;
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.name == "Ground")
         {
             isJumping = false;
         }
 
         if (collision.gameObject.name == "Spike")
         {
-            Destroy(gameObject);
+            GameManager.lives -= 1;
+            SceneManager.LoadScene("MainMenu");
         }
 
-
     }
+
+
 }

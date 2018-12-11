@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212112039559797868}
   - component: {fileID: 61344201318676248}
   - component: {fileID: 114932134309211872}
+  - component: {fileID: 82718229456273744}
   m_Layer: 10
   m_Name: Sword
   m_TagString: Untagged
@@ -43,6 +44,7 @@ GameObject:
   - component: {fileID: 114790890165652422}
   - component: {fileID: 95235794799359512}
   - component: {fileID: 114006174918583056}
+  - component: {fileID: 114984519989025266}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -57,8 +59,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737784085211050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.92, y: 4.27, z: 0}
-  m_LocalScale: {x: 40.11, y: 39.155, z: 3.3926377}
+  m_LocalPosition: {x: 2.3527255, y: -0.483, z: -1}
+  m_LocalScale: {x: 28.43799, y: 27.760893, z: 2.40538}
   m_Children:
   - {fileID: 4306667977333356}
   m_Father: {fileID: 0}
@@ -147,6 +149,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.13}
   m_EdgeRadius: 0
+--- !u!82 &82718229456273744
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146488589416728}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243373656539715064, guid: 16fe03dd33dbe4445a0a98e53ca19fec,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: b830c647f57d25c40add8fb0a3c5664c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95235794799359512
 Animator:
   serializedVersion: 3
@@ -188,9 +286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8e3373fa04a8a4a8835e1aadcf96b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 15
-  playerJumpforce: 13
-  playerAnimator: {fileID: 95235794799359512}
+  playerSpeed: 10
+  playerJumpforce: 16
+  animator: {fileID: 95235794799359512}
 --- !u!114 &114932134309211872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,6 +301,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &114984519989025266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737784085211050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e3373fa04a8a4a8835e1aadcf96b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 0
+  playerJumpforce: 0
+  animator: {fileID: 0}
 --- !u!212 &212022537325911938
 SpriteRenderer:
   m_ObjectHideFlags: 1
