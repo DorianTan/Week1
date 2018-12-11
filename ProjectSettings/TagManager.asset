@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Spike
-<<<<<<< HEAD
-  - "\xCBnemy"
-=======
-  - Doorlvl1
->>>>>>> Ethan
-  - Enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Enemies
-  - Player
-  - Rope
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
