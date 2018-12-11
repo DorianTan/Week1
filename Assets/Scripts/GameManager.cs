@@ -37,5 +37,10 @@ public class GameManager : MonoBehaviour
 	            lives = 3;
                 break;
         }
-	}
+
+	    if (Input.GetKeyDown(KeyCode.Escape))
+	    {
+	        Application.Quit();
+	    }
+    }
 }
