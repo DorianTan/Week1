@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour {
 
+    [SerializeField] private int damage=10;
+
+
     private void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("fdjk");
-
-
-        if (col.gameObject.name == "Enemies")
+    {    
+        if (col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject);
+            Enemies.health -= damage;
         }
     }
 }

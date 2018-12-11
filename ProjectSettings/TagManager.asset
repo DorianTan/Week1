@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Spike
   - "\xCBnemy"
+  - Enemy
   layers:
   - Default
   - TransparentFX

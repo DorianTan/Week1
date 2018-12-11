@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor.Experimental.UIElements;
 using UnityEngine.Experimental.PlayerLoop;
 
 public class PlayerMovementSide : MonoBehaviour
@@ -15,15 +14,12 @@ public class PlayerMovementSide : MonoBehaviour
     private float horizontalInput;
     private SpriteRenderer playerSprite;
     private Animator playerAnimator;
-    private Collider2D swordCollider;
-
     public Animator animator;
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        swordCollider = GameObject.Find("Sword").GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
@@ -51,15 +47,6 @@ public class PlayerMovementSide : MonoBehaviour
         if (collision.gameObject.name == "Spike")
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D swordCollider)
-    {
-        
-        if (swordCollider.name == "Enemy")
-        {
-            Destroy(this.gameObject);
         }
     }
 }
