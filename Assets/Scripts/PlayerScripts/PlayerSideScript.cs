@@ -39,7 +39,7 @@ public class PlayerMovementSide : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
         }
