@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146488589416728}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.092, y: -0.0428, z: 0}
+  m_LocalPosition: {x: 0.092, y: -0.0428, z: -0.5}
   m_LocalScale: {x: 0.6064153, y: 0.8092026, z: 8.9075}
   m_Children: []
   m_Father: {fileID: 4197281819991418}
@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4a3837b770bab4f8c8e5445b0a7e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
   sword: {fileID: 1146488589416728}
 --- !u!114 &114790890165652422
 MonoBehaviour:
@@ -189,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8e3373fa04a8a4a8835e1aadcf96b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
-  playerJumpforce: 7
+  playerSpeed: 15
+  playerJumpforce: 13
   playerAnimator: {fileID: 95235794799359512}
 --- !u!114 &114932134309211872
 MonoBehaviour:
@@ -203,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d003349e2c370542988374e25258181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!212 &212022537325911938
 SpriteRenderer:
   m_ObjectHideFlags: 1
