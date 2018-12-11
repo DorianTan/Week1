@@ -22,7 +22,10 @@ GameObject:
   - component: {fileID: 212404156670258220}
   - component: {fileID: 50011656803109624}
   - component: {fileID: 61053015024593366}
+<<<<<<< HEAD
   - component: {fileID: 251297437804386234}
+=======
+>>>>>>> Ethan
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
