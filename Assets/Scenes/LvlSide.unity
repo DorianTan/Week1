@@ -4685,7 +4685,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4429172090489290, guid: 1c9d99819be46c4409b18c24a18f2af4,
     type: 2}
   m_PrefabInternal: {fileID: 1646252093}
->>>>>>> master
 --- !u!4 &783834873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4197281819991418, guid: 9e3debecf879028438144125a9201701,
