@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public int damage;
     public GameObject sword;
 
     // Use this for initialization

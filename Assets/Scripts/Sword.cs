@@ -6,12 +6,15 @@ public class Sword : MonoBehaviour {
 
     [SerializeField] private int damage=10;
 
+    
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {    
         if (col.gameObject.tag == "Enemy")
         {
-            Enemies.health -= damage;
+            col.gameObject.GetComponent<Enemies>().TakeDamage(damage);
         }
     }
+    
 }
