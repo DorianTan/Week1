@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Ground
   - Spike
+<<<<<<< HEAD
   - "\xCBnemy"
+=======
+  - Doorlvl1
+>>>>>>> Ethan
   - Enemy
   layers:
   - Default
@@ -20,7 +24,7 @@ TagManager:
   - Background
   - Enemies
   - Player
-  - 
+  - Rope
   - 
   - 
   - 

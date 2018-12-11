@@ -30,8 +30,7 @@ public class EnemyPattern : MonoBehaviour
                 // Moving Left
                 if (transform.position.x > minDist)
                 {
-                    GetComponent<Rigidbody2D>().velocity =
-                        new Vector2(-enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
                 }
 
                 else
@@ -45,8 +44,7 @@ public class EnemyPattern : MonoBehaviour
                 //Moving Right
                 if (transform.position.x < maxDist)
                 {
-                    GetComponent<Rigidbody2D>().velocity =
-                        new Vector2(enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(enemySpeed, GetComponent<Rigidbody2D>().velocity.y);
                 }
 
                 else
